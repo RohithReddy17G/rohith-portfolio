@@ -164,6 +164,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
 
 .hero::before{animation:drift 16s ease-in-out infinite alternate;transform-origin:center} .hero figure{animation:float 7s ease-in-out infinite;will-change:transform}.hero figure::after{content:"";position:absolute;inset:-30% 45% -30% -45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-130%) rotate(18deg);animation:shine 8s ease-in-out infinite;pointer-events:none}.hero figure{position:relative}.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.card:hover{transform:translateY(-4px);border-color:#C7D2FE;box-shadow:0 18px 30px -24px rgba(55,48,163,.55)}.btn{position:relative;overflow:hidden;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.32),transparent 65%);transform:translateX(-120%);transition:transform .55s ease}.btn:hover::after{transform:translateX(120%)}.btn.pri{box-shadow:0 9px 18px -12px var(--pri)}.proof-strip span{animation:pop .65s both}.proof-strip span:nth-child(2){animation-delay:.1s}.proof-strip span:nth-child(3){animation-delay:.2s}
 
+.approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.approach .card{position:relative;overflow:hidden}.approach .card::after{content:"";position:absolute;right:-28px;bottom:-35px;width:100px;height:100px;border:1px solid rgba(55,48,163,.12);border-radius:50%;transition:transform .5s ease}.approach .card:hover::after{transform:scale(1.7)}.approach-no{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--tint);color:var(--pri);font-weight:800;font-size:.78rem;margin-bottom:18px}.approach h3{font-size:1.12rem;margin-bottom:9px}.approach p{color:var(--mute);font-size:.94rem}.approach-note{margin-top:18px!important;color:var(--pri)!important;font-weight:800;font-size:.76rem!important;letter-spacing:.04em;text-transform:uppercase}@media(max-width:860px){.approach{grid-template-columns:1fr}}
 </style>
 </head>
 <body>
@@ -173,7 +174,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
   <a class="logo" href="#home" aria-label="G. Rohith Reddy home"><span class="logo-mark" aria-hidden="true">GR</span><span>G. Rohith Reddy<span class="logo-dot">.</span></span></a>
   <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
   <nav aria-label="Main"><ul class="nav" id="nav">
-    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#approach">Approach</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Credentials</a></li><li><a href="#achievements">Achievements</a></li><li><a href="#contact">Contact</a></li>
   </ul></nav>
 </div></header>
 
@@ -204,6 +205,14 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
   </div>
 </section>
 
+<section id="approach"><p class="sec-t">How I work</p><h2>From questions to useful data</h2>
+  <div class="approach">
+    <article class="card rv"><span class="approach-no">01</span><h3>Start with the question</h3><p>I break a broad problem into measurable questions first—such as demand, pay, volume, or spending—before writing the query that answers it.</p><p class="approach-note">SQL analysis · joins · filters · aggregations</p></article>
+    <article class="card rv"><span class="approach-no">02</span><h3>Make messy data useful</h3><p>My ETL project focuses on the practical middle layer: taking raw order and delivery records, transforming them with SQL, and shaping them into summaries that are easier to read.</p><p class="approach-note">Ingestion · transformation · analytical summaries</p></article>
+    <article class="card rv"><span class="approach-no">03</span><h3>Keep learning in public</h3><p>I document projects on GitHub and reinforce the fundamentals through coursework and certificates across SQL, cloud foundations, Linux, Java, Python, and applied AI.</p><p class="approach-note">Documentation · practice · steady improvement</p></article>
+  </div>
+</section>
+
 <section id="projects"><p class="sec-t">Selected work</p><h2>Projects built to make data useful</h2>
   <div class="pj">
     <article class="card rv">
@@ -213,7 +222,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
           <div><dt>Purpose</dt><dd>Explore the Data Engineer job market with SQL: which skills are most in demand, which roles pay the most, and which skills balance salary and demand best.</dd></div>
           <div><dt>What I did</dt><dd>Wrote and documented SQL queries for three analyses: top demanded skills, top-paying jobs and most optimal skills.</dd></div>
           <div><dt>Tools</dt><dd>SQL, DuckDB, Visual Studio Code, Git and GitHub</dd></div>
-          <div><dt>SQL operations</dt><dd>Joins across multiple tables, COUNT() and MEDIAN() aggregations, and filtering and sorting with WHERE, HAVING and ORDER BY.</dd></div>
+          <div><dt>SQL operations</dt><dd>Joins across multiple tables, COUNT() and MEDIAN() aggregations, and filtering and sorting with WHERE, HAVING and ORDER BY.</dd></div><div><dt>Outcome</dt><dd>A documented, reproducible analysis that turns job-market data into practical questions about demand, compensation, and skill choices.</dd></div>
         </dl>
         <div class="links">
           <a href="https://github.com/RohithReddy17G/sql_data_engineering_projects" target="_blank" rel="noopener">View repository</a>
@@ -229,7 +238,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
       <dl class="pd">
         <div><dt>Purpose</dt><dd>Turn raw, messy e-commerce order and delivery records into clear analytical summaries.</dd></div>
         <div><dt>How it works</dt><dd>Ingests the raw records, applies SQL transformation logic, and generates structured summaries of customer spending and order volume.</dd></div>
-        <div><dt>Tools</dt><dd>SQL</dd></div>
+        <div><dt>Tools</dt><dd>SQL</dd></div><div><dt>Outcome</dt><dd>A clearer path from raw e-commerce records to structured summaries of customer spending and order volume.</dd></div>
       </dl>
       <div class="links"><a href="https://github.com/RohithReddy17G/automated-sales-etl-pipeline" target="_blank" rel="noopener">View repository</a></div>
     </article>
@@ -276,13 +285,13 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
 </section>
 
 <section id="achievements"><p class="sec-t">Achievements</p><h2>Achievements and interests</h2>
-  <div class="card ach rv"><img loading="lazy" src="assets/image-09.jpg" width="480" height="600" alt="G. Rohith Reddy speaking at a podium on stage at Marwadi University" decoding="async"><div><h3>Hosted an Expert Show</h3><p>Hosted an Expert Show attended by 1,500 students, which built my communication and presentation skills.</p></div></div>
+  <div class="card ach rv"><img loading="lazy" src="assets/image-09.jpg" width="480" height="600" alt="G. Rohith Reddy speaking at a podium on stage at Marwadi University" decoding="async"><div><h3>Hosted an Expert Show</h3><p>Hosted an Expert Show attended by 1,500 students. The experience strengthened my communication, presentation, and ability to hold an audience’s attention—skills that matter when explaining technical work.</p></div></div>
   <p class="int"><b>Interests:</b> music and old-school gym training.</p>
 </section>
 
 <section id="contact"><p class="sec-t">Next step</p><h2>Let’s build something useful</h2>
   <div class="card ct rv">
-    <p>I’m open to internship and entry-level data engineering opportunities. The best way to reach me is by email.</p>
+    <p>I’m open to internship and entry-level data engineering opportunities where I can contribute with SQL, learn from experienced engineers, and keep turning messy data into clear outputs. The best way to reach me is by email.</p>
     <a class="mail" href="mailto:gundarohithreddy@gmail.com">gundarohithreddy@gmail.com</a>
     <div class="btns">
       <a class="btn pri" href="https://www.linkedin.com/in/gunda-rohith-reddy-234a17359/" target="_blank" rel="noopener">LinkedIn</a>
@@ -314,7 +323,7 @@ const pg=$('#pg'),dock=$('#dock');
 let tk=false;
 function onScroll(){const y=scrollY,h=R.scrollHeight-innerHeight;pg.style.transform='scaleX('+(h>0?y/h:0)+')';dock.classList.toggle('show',y>520)}
 addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(()=>{onScroll();tk=false})}},{passive:true});onScroll();
-const links=$$('.nav a'),secs=['home','about','projects','skills','education','certifications','contact'].map(id=>document.getElementById(id));
+const links=$$('.nav a'),secs=['home','about','approach','projects','skills','education','certifications','achievements','contact'].map(id=>document.getElementById(id));
 const spy=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
 secs.forEach(s=>s&&spy.observe(s));
 const rv=$$('.rv'),io=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){const t=x.target;t.classList.add('in');io.unobserve(t);setTimeout(()=>t.classList.remove('rv','in'),900)}}),{threshold:.12});
