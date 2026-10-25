@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>G. Rohith Reddy | Aspiring Data Engineer · CSE–AI Student</title>
+<meta name="description" content="Portfolio of G. Rohith Reddy, an aspiring Data Engineer and B.Tech CSE (AI) student at Marwadi University. SQL, DuckDB and data pipeline projects, certificates and resume.">
+<meta name="theme-color" content="#3730A3">
+<meta name="author" content="G. Rohith Reddy">
+<meta name="keywords" content="G. Rohith Reddy, Metro, data engineering, SQL, DuckDB, Python, CSE AI student">
+<meta property="og:site_name" content="Metro — G. Rohith Reddy">
+<meta name="twitter:title" content="G. Rohith Reddy | Aspiring Data Engineer">
+<meta name="twitter:description" content="B.Tech CSE (AI) student building SQL, DuckDB and data pipeline projects.">
+<meta property="og:type" content="website">
+<meta property="og:title" content="G. Rohith Reddy | Aspiring Data Engineer">
+<meta property="og:description" content="B.Tech CSE (AI) student at Marwadi University. SQL, DuckDB and data pipeline projects, certificates and resume.">
+<meta name="twitter:card" content="summary">
+
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%233730A3'/%3E%3Ctext x='32' y='45' font-size='34' font-family='Arial' font-weight='700' text-anchor='middle' fill='white'%3EM%3C/text%3E%3C/svg%3E">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;600;800&display=swap&subset=latin">
+<style>
+:root{--amb:#F59E0B;--bg:#F8FAFC;--ink:#0F172A;--mute:#475569;--card:#fff;--line:#E2E8F0;--pri:#3730A3;--tint:#EEF2FF;--acc:#0D9488}
+*{box-sizing:border-box;margin:0}
+html{scroll-behavior:smooth;scroll-padding-top:76px}
+body{background:var(--bg);color:var(--ink);font:16.5px/1.65 'Plus Jakarta Sans',system-ui,-apple-system,'Segoe UI',Roboto,Arial,sans-serif;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}
+img{max-width:100%}
+:focus-visible{outline:3px solid var(--pri);outline-offset:3px;border-radius:6px}
+.skip{position:absolute;left:12px;top:-60px;background:var(--pri);color:#fff;padding:10px 16px;border-radius:8px;z-index:60}
+.skip:focus{top:10px}
+.w{max-width:1040px;margin:0 auto;padding:0 22px}
+#pg{position:fixed;top:0;left:0;right:0;height:3px;z-index:40;background:var(--pri);transform:scaleX(0);transform-origin:left}
+header.bar{position:sticky;top:0;z-index:30;background:rgba(248,250,252,.94);backdrop-filter:blur(10px);border-bottom:1px solid var(--line)}
+.bar .w{display:flex;justify-content:space-between;align-items:center;height:62px}
+.logo{display:inline-flex;align-items:center;gap:9px;font-weight:800;letter-spacing:-.01em}.logo-mark{display:grid;place-items:center;width:30px;height:30px;border-radius:9px;background:var(--pri);color:#fff;font-size:.85rem;box-shadow:4px 4px 0 var(--amb)}.logo-dot{color:var(--amb)}
+.nav{display:flex;gap:4px;list-style:none;padding:0}
+.nav a{display:block;padding:8px 12px;border-radius:8px;font-weight:600;font-size:.93rem;color:var(--mute);transition:color .15s,background .15s}
+.nav a:hover{color:var(--pri);background:var(--tint)}
+.nav a.on{color:var(--pri);background:var(--tint)}
+.menu{display:none;min-height:44px;min-width:44px;border:2px solid var(--line);border-radius:10px;background:var(--card);font:700 .9rem inherit;cursor:pointer;padding:0 14px}
+@media(max-width:860px){
+ .menu{display:inline-flex;align-items:center}
+ .nav{display:none;position:absolute;left:0;right:0;top:62px;flex-direction:column;background:var(--card);padding:10px 22px 16px;border-bottom:1px solid var(--line);box-shadow:0 18px 30px -20px rgba(15,23,42,.4)}
+ .nav.open{display:flex}
+ .nav a{padding:13px 10px}
+}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;min-height:46px;padding:0 20px;border-radius:10px;font-weight:700;border:2px solid var(--pri);color:var(--pri);background:transparent;cursor:pointer;font-family:inherit;font-size:.97rem;transition:transform .15s,background .15s}
+.btn:hover{background:var(--tint);transform:translateY(-1px)}
+.btn.pri{background:var(--pri);color:#fff}
+.btn.pri:hover{background:#2A2480}
+.btns{display:flex;flex-wrap:wrap;gap:12px}
+.hero{display:grid;grid-template-columns:1.2fr 1fr;gap:56px;align-items:center;padding:64px 0 48px}
+@media(max-width:860px){.hero{grid-template-columns:1fr;gap:30px;padding:34px 0 30px}.hero figure{order:-1;max-width:340px}}
+.eyebrow{display:inline-block;font-weight:700;font-size:.9rem;color:var(--acc);margin-bottom:10px}
+.hero h1{font-size:clamp(2.5rem,6.4vw,4.2rem);line-height:1.04;font-weight:800;letter-spacing:-.03em;margin-bottom:10px}
+.hero .role{font-size:clamp(1.15rem,2.6vw,1.5rem);font-weight:800;color:var(--pri);margin-bottom:16px}
+.hero p.lead{color:var(--mute);font-size:1.08rem;max-width:34em;margin-bottom:26px}
+.hero figure{border-radius:20px;overflow:hidden;border:1px solid var(--line);box-shadow:0 24px 44px -26px rgba(15,23,42,.55);background:#ddd}
+.hero img{display:block;width:100%;height:auto}
+section{padding:60px 0;border-top:1px solid var(--line)}
+.sec-t{font-size:.85rem;font-weight:800;letter-spacing:.09em;text-transform:uppercase;color:var(--acc);margin-bottom:6px}
+h2{font-size:clamp(1.7rem,3.6vw,2.2rem);font-weight:800;letter-spacing:-.02em;line-height:1.2;margin-bottom:24px}
+.card{background:var(--card);border:1px solid var(--line);border-radius:16px;padding:24px}
+.about{display:grid;grid-template-columns:1.6fr 1fr;gap:22px}
+@media(max-width:860px){.about{grid-template-columns:1fr}}
+.about p+p{margin-top:12px}
+.facts{list-style:none;padding:0;display:grid;gap:14px}
+.facts b{display:block;font-size:1.5rem;color:var(--pri);line-height:1.1}
+.facts span{color:var(--mute);font-size:.92rem}
+.pj{display:grid;gap:22px}
+.pj .card{display:grid;grid-template-columns:1.25fr 1fr;gap:26px}
+.pj .card.one{grid-template-columns:1fr}
+@media(max-width:860px){.pj .card{grid-template-columns:1fr}}
+.pj h3{font-size:1.35rem;font-weight:800;margin-bottom:12px}
+.pd{display:grid;gap:12px}
+.pd dt{font-weight:800;font-size:.8rem;letter-spacing:.06em;text-transform:uppercase;color:var(--pri)}
+.pd dd{margin:0;color:#334155}
+.links{display:flex;flex-wrap:wrap;gap:10px;margin-top:16px}
+.links a{font-weight:700;font-size:.9rem;color:var(--pri);border-bottom:2px solid var(--tint)}
+.links a:hover{border-color:var(--pri)}
+.pj figure{align-self:start}
+.pj figure img{display:block;width:100%;height:auto;border:1px solid var(--line);border-radius:10px;background:#fff}
+.pj figcaption{font-size:.85rem;color:var(--mute);margin-top:8px}
+.sk{display:grid;grid-template-columns:repeat(auto-fit,minmax(230px,1fr));gap:18px}
+.sk h3{font-size:1rem;font-weight:800;margin-bottom:12px}
+.sk ul{list-style:none;padding:0;display:grid;gap:9px}
+.sk li{display:flex;justify-content:space-between;gap:10px;align-items:baseline;font-weight:600}
+.sk small{font-weight:700;font-size:.74rem;color:var(--pri);background:var(--tint);padding:2px 10px;border-radius:99px;white-space:nowrap}
+.edu{display:grid;grid-template-columns:1.2fr 1fr;gap:22px}
+@media(max-width:860px){.edu{grid-template-columns:1fr}}
+.tl{list-style:none;padding:0;display:grid;gap:20px}
+.tl h3{font-size:1.05rem;font-weight:800}
+.tl p{color:var(--mute);font-size:.95rem}
+.tl b{color:var(--pri)}
+.chart{display:flex;align-items:flex-end;gap:14px;height:170px;margin-top:16px;border-bottom:2px solid var(--line)}
+.col{flex:1;display:flex;flex-direction:column;justify-content:flex-end;align-items:center;height:100%;font-weight:800;font-size:.9rem}
+.col i{display:block;width:100%;max-width:60px;background:var(--pri);border-radius:8px 8px 0 0;transform-origin:bottom;transition:transform .8s cubic-bezier(.2,.8,.2,1)}
+.js .chart:not(.on) i{transform:scaleY(0)}
+.lab{display:flex;gap:14px;margin-top:6px;color:var(--mute);font-size:.82rem;text-align:center}
+.lab span{flex:1}
+.cw{margin-top:18px;color:var(--mute);font-size:.93rem}
+.cl{display:grid;gap:12px}
+.cd{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--pri);border-radius:12px;overflow:hidden}
+.cd summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:14px;padding:14px 18px;min-height:56px}
+.cd summary::-webkit-details-marker{display:none}
+.cd summary::after{content:"View";font-weight:700;font-size:.85rem;color:var(--pri);border:2px solid var(--pri);border-radius:99px;padding:2px 14px;flex:none}
+.cd[open] summary::after{content:"Hide"}
+.cd b{display:block;line-height:1.35}
+.cd small{color:var(--mute);font-size:.88rem}
+.cd img{display:block;width:100%;max-width:900px;height:auto;margin:0 auto;border-top:1px solid var(--line)}
+.ach{display:grid;grid-template-columns:240px 1fr;gap:26px;align-items:center}
+@media(max-width:700px){.ach{grid-template-columns:1fr}.ach img{max-width:260px}}
+.ach img{width:100%;height:auto;border-radius:12px;display:block}
+.ach h3{font-size:1.25rem;font-weight:800;margin-bottom:6px}
+.ach p{color:var(--mute)}
+.int{margin-top:16px;color:var(--mute);font-size:.95rem}
+.ct{text-align:center}
+.ct p{color:var(--mute);max-width:32em;margin:0 auto 22px}
+.mail{display:inline-block;font-size:clamp(1.15rem,3.2vw,1.6rem);font-weight:800;color:var(--pri);border-bottom:3px solid var(--tint);margin-bottom:24px;word-break:break-all}
+.mail:hover{border-color:var(--pri)}
+.ct .btns{justify-content:center}
+footer{text-align:center;color:var(--mute);padding:30px 0 100px;font-size:.9rem}
+#dock{position:fixed;left:50%;bottom:16px;z-index:35;display:flex;gap:6px;padding:7px;border-radius:99px;background:rgba(15,23,42,.94);box-shadow:0 14px 34px -10px rgba(15,23,42,.6);transform:translate(-50%,160%);transition:transform .45s cubic-bezier(.2,.8,.2,1)}
+#dock.show{transform:translate(-50%,0)}
+#dock a{display:flex;align-items:center;gap:8px;color:#fff;font-weight:700;font-size:.88rem;padding:0 16px;min-height:44px;border-radius:99px;transition:background .15s}
+#dock a:hover{background:var(--pri)}
+#dock svg{width:18px;height:18px;fill:currentColor;flex:none}
+@media(max-width:560px){#dock a span{display:none}#dock a{padding:0 14px}}
+.cur,.dot{position:fixed;left:0;top:0;pointer-events:none;z-index:70;border-radius:50%;opacity:0;transition:opacity .25s}
+.cur{width:36px;height:36px;border:2px solid var(--pri);margin:-18px 0 0 -18px;transition:opacity .25s,width .2s,height .2s,margin .2s,background .2s}
+.cur.hov{width:56px;height:56px;margin:-28px 0 0 -28px;background:rgba(55,48,163,.12)}
+.dot{width:6px;height:6px;margin:-3px 0 0 -3px;background:var(--pri)}
+.js .rv{opacity:0;transform:translateY(16px);transition:opacity .6s ease,transform .6s cubic-bezier(.2,.8,.2,1)}
+.js .rv.in{opacity:1;transform:none}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.js .rv{transform:none}.col i{transition:none}}
+@media print{.bar,#dock,#pg,.cur,.dot{display:none}}
+
+.hero{position:relative}
+.hero::before{content:"";position:absolute;inset:-30px -40px 0;z-index:-1;background:radial-gradient(620px 320px at 12% 18%,rgba(13,148,136,.16),transparent 70%),radial-gradient(520px 340px at 92% 8%,rgba(245,158,11,.22),transparent 70%),radial-gradient(520px 320px at 55% 95%,rgba(55,48,163,.12),transparent 70%)}
+.hl{background:linear-gradient(transparent 66%,rgba(245,158,11,.6) 66%)}
+.type{font-size:1.25rem;font-weight:800;margin-bottom:14px;min-height:1.7em}
+#rot{color:var(--acc)}
+.caret{display:inline-block;width:2px;height:1.1em;background:var(--pri);margin-left:3px;vertical-align:-.18em;animation:bl 1s steps(1) infinite}
+@keyframes bl{50%{opacity:0}}
+.btn.amb{background:var(--amb);border-color:var(--amb);color:#1B1300}
+.btn.amb:hover{background:#FBBF24;border-color:#FBBF24}
+h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margin-top:10px;background:linear-gradient(90deg,var(--pri),var(--acc),var(--amb))}
+.pj .card{position:relative;overflow:hidden}
+.pj .card::before{content:"";position:absolute;left:0;right:0;top:0;height:5px;background:linear-gradient(90deg,var(--pri),var(--acc),var(--amb))}
+.facts b.c1{color:var(--pri)}.facts b.c2{color:#0F766E}.facts b.c3{color:#B45309}
+.sk small.lv-w{background:var(--tint);color:var(--pri)}
+.sk small.lv-p{background:#CCFBF1;color:#0F766E}
+.sk small.lv-l{background:#FEF3C7;color:#92400E}
+.sk small.lv-b{background:#E2E8F0;color:#334155}
+.col i{background:linear-gradient(var(--acc),var(--pri))}
+.ct{background:linear-gradient(135deg,#EEF2FF,#F0FDFA 55%,#FEF9E7)}
+.cd{border-left-color:var(--acc)}
+.cd:nth-child(3n+1){border-left-color:var(--pri)}.cd:nth-child(3n){border-left-color:var(--amb)}
+@media(prefers-reduced-motion:reduce){.caret{animation:none}}
+</style>
+</head>
+<body>
+<a class="skip" href="#main">Skip to content</a>
+<div id="pg" aria-hidden="true"></div>
+<header class="bar"><div class="w">
+  <a class="logo" href="#home" aria-label="Metro — G. Rohith Reddy home"><span class="logo-mark" aria-hidden="true">M</span><span>Metro<span class="logo-dot">.</span></span></a>
+  <button class="menu" id="menu" aria-expanded="false" aria-controls="nav">Menu</button>
+  <nav aria-label="Main"><ul class="nav" id="nav">
+    <li><a href="#home">Home</a></li><li><a href="#about">About</a></li><li><a href="#projects">Projects</a></li><li><a href="#skills">Skills</a></li><li><a href="#education">Education</a></li><li><a href="#certifications">Certifications</a></li><li><a href="#contact">Contact</a></li>
+  </ul></nav>
+</div></header>
+
+<main id="main" class="w">
+<div class="hero" id="home">
+  <div>
+    <span class="eyebrow">Metro / G. Rohith Reddy</span>
+    <h1>G. <span class="hl">Rohith</span> Reddy</h1>
+    <p class="role">Aspiring Data Engineer | CSE–AI Student</p>
+    <p class="type" aria-label="SQL builder, data pipeline learner, quick learner, public speaker">I’m a <span id="rot">SQL builder</span><i class="caret" aria-hidden="true"></i></p>
+    <p class="lead">I’m a B.Tech student at Marwadi University interested in SQL, databases, data transformation and data pipelines. I’m practising SQL and DuckDB through hands-on projects and learning Python.</p>
+    <div class="btns">
+      <a class="btn pri" href="#projects">Projects</a>
+      <a class="btn amb" href="assets/G_Rohith_Reddy_Resume.pdf" download="G_Rohith_Reddy_Resume.pdf" data-resume>Download Resume</a>
+      <a class="btn" href="https://github.com/RohithReddy17G" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://www.linkedin.com/in/gunda-rohith-reddy-234a17359/" target="_blank" rel="noopener">LinkedIn</a>
+    </div>
+  </div>
+  <figure><img src="assets/image-01.jpg" width="720" height="960" alt="Portrait of G. Rohith Reddy smiling, wearing a checked shirt in front of a red phone booth" decoding="async"></figure>
+</div>
+
+<section id="about"><p class="sec-t">About</p><h2>About me</h2>
+  <div class="about">
+    <div class="card rv"><p>I’m G. Rohith Reddy, a B.Tech student in Computer Science and Engineering (Artificial Intelligence) at Marwadi University. My goal is to become a Data Engineer.</p>
+    <p>I enjoy working with SQL and databases, and I’m building my skills in Python and data engineering through projects on GitHub, practical courses and certificates.</p></div>
+    <ul class="facts card rv"><li><b class="c1">7.25</b><span>CGPA after 4 semesters (now in 5th)</span></li><li><b class="c2">2</b><span>Data projects on GitHub</span></li><li><b class="c3">6</b><span>Certificates from Oracle, Cisco, AWS and CII</span></li></ul>
+  </div>
+</section>
+
+<section id="projects"><p class="sec-t">Projects</p><h2>Data engineering projects</h2>
+  <div class="pj">
+    <article class="card rv">
+      <div>
+        <h3>Data Jobs Analysis (SQL Data Engineering Projects)</h3>
+        <dl class="pd">
+          <div><dt>Purpose</dt><dd>Explore the Data Engineer job market with SQL: which skills are most in demand, which roles pay the most, and which skills balance salary and demand best.</dd></div>
+          <div><dt>What I did</dt><dd>Wrote and documented SQL queries for three analyses: top demanded skills, top-paying jobs and most optimal skills.</dd></div>
+          <div><dt>Tools</dt><dd>SQL, DuckDB, Visual Studio Code, Git and GitHub</dd></div>
+          <div><dt>SQL operations</dt><dd>Joins across multiple tables, COUNT() and MEDIAN() aggregations, and filtering and sorting with WHERE, HAVING and ORDER BY.</dd></div>
+        </dl>
+        <div class="links">
+          <a href="https://github.com/RohithReddy17G/sql_data_engineering_projects" target="_blank" rel="noopener">View repository</a>
+          <a href="https://github.com/RohithReddy17G/sql_data_engineering_projects/blob/main/Lessons/1_EDA/01_top_demanded_skills.sql" target="_blank" rel="noopener">Top skills query</a>
+          <a href="https://github.com/RohithReddy17G/sql_data_engineering_projects/blob/main/Lessons/1_EDA/02_top_paying.sql" target="_blank" rel="noopener">Top-paying jobs query</a>
+          <a href="https://github.com/RohithReddy17G/sql_data_engineering_projects/blob/main/Lessons/1_EDA/03_most_optimal.sql" target="_blank" rel="noopener">Optimal skills query</a>
+        </div>
+      </div>
+      <figure><img loading="lazy" src="assets/image-02.jpg" alt="Diagram of the data warehouse tables used in the Data Jobs Analysis project" decoding="async"><figcaption>Data warehouse structure used in the analysis (from the project README).</figcaption></figure>
+    </article>
+    <article class="card one rv">
+      <h3>Automated Sales ETL Pipeline</h3>
+      <dl class="pd">
+        <div><dt>Purpose</dt><dd>Turn raw, messy e-commerce order and delivery records into clear analytical summaries.</dd></div>
+        <div><dt>How it works</dt><dd>Ingests the raw records, applies SQL transformation logic, and generates structured summaries of customer spending and order volume.</dd></div>
+        <div><dt>Tools</dt><dd>SQL</dd></div>
+      </dl>
+      <div class="links"><a href="https://github.com/RohithReddy17G/automated-sales-etl-pipeline" target="_blank" rel="noopener">View repository</a></div>
+    </article>
+  </div>
+</section>
+
+<section id="skills"><p class="sec-t">Skills</p><h2>Technical skills</h2>
+  <div class="sk">
+    <div class="card rv"><h3>Programming</h3><ul><li>Java <small class="lv-w">working knowledge</small></li><li>C <small class="lv-w">working knowledge</small></li><li>C++ <small class="lv-w">working knowledge</small></li><li>Python <small class="lv-l">learning</small></li></ul></div>
+    <div class="card rv"><h3>Databases and data</h3><ul><li>SQL <small class="lv-p">practising</small></li><li>DuckDB <small class="lv-p">practising</small></li></ul></div>
+    <div class="card rv"><h3>Tools</h3><ul><li>Git and GitHub <small class="lv-p">using</small></li><li>Visual Studio Code <small class="lv-p">using</small></li></ul></div>
+    <div class="card rv"><h3>Basics</h3><ul><li>Linux <small class="lv-b">basics</small></li><li>AWS cloud <small class="lv-b">basics</small></li><li>Machine learning <small class="lv-b">basics</small></li></ul></div>
+  </div>
+</section>
+
+<section id="education"><p class="sec-t">Education</p><h2>Education</h2>
+  <div class="edu">
+    <div class="card rv"><ul class="tl">
+      <li><h3>B.Tech, CSE (Artificial Intelligence)</h3><p>Marwadi University, Rajkot · 2024 – 2028 (expected)</p><p><b>CGPA 7.25</b> after 4 semesters · currently in 5th semester</p></li>
+      <li><h3>Intermediate (Class XII)</h3><p>Vamsi Junior College, Srikalahasti · 2024 · <b>80.9%</b></p></li>
+      <li><h3>Secondary School (Class X)</h3><p>Bhashyam High School, Srikalahasti · 2022 · <b>86.8%</b></p></li>
+    </ul>
+    <p class="cw"><b>Relevant coursework:</b> Database Management Systems, Data Structures, Programming with Python, Java Programming, Machine Learning Essentials, Operating System and Virtualization, Probability and Statistics.</p></div>
+    <div class="card rv"><h3 style="font-size:1rem;font-weight:800">B.Tech SGPA by semester</h3>
+      <div class="chart" role="img" aria-label="SGPA by semester: 6.84, 7.00, 7.60 and 7.52">
+        <div class="col">6.84<i style="height:68%"></i></div><div class="col">7.00<i style="height:70%"></i></div><div class="col">7.60<i style="height:76%"></i></div><div class="col">7.52<i style="height:75%"></i></div>
+      </div>
+      <div class="lab"><span>Sem 1</span><span>Sem 2</span><span>Sem 3</span><span>Sem 4</span></div>
+    </div>
+  </div>
+</section>
+
+<section id="certifications"><p class="sec-t">Certifications</p><h2>Certifications</h2>
+  <p style="color:var(--mute);margin:-12px 0 20px">Select a certificate to view it.</p>
+  <div class="cl">
+    <details class="cd"><summary><span><b>Database Programming with SQL</b><small>Oracle Academy · Nov 2025</small></span></summary><img loading="lazy" src="assets/image-03.jpg" alt="Certificate: Database Programming with SQL, Oracle Academy · Nov 2025" decoding="async"></details>
+    <details class="cd"><summary><span><b>Applied Machine Learning and AI (Foundational Course)</b><small>Confederation of Indian Industry (CII) · Sep 2026</small></span></summary><img loading="lazy" src="assets/image-04.jpg" alt="Certificate: Applied Machine Learning and AI (Foundational Course), Confederation of Indian Industry (CII) · Sep 2026" decoding="async"></details>
+    <details class="cd"><summary><span><b>AWS Academy Graduate: Cloud Foundations (20 hours)</b><small>AWS Academy · 2026</small></span></summary><img loading="lazy" src="assets/image-05.jpg" alt="Certificate: AWS Academy Graduate: Cloud Foundations (20 hours), AWS Academy · 2026" decoding="async"></details>
+    <details class="cd"><summary><span><b>Java Fundamentals</b><small>Oracle Academy · Apr 2026</small></span></summary><img loading="lazy" src="assets/image-06.jpg" alt="Certificate: Java Fundamentals, Oracle Academy · Apr 2026" decoding="async"></details>
+    <details class="cd"><summary><span><b>Linux Essentials</b><small>Cisco Networking Academy · Mar 2026</small></span></summary><img loading="lazy" src="assets/image-07.jpg" alt="Certificate: Linux Essentials, Cisco Networking Academy · Mar 2026" decoding="async"></details>
+    <details class="cd"><summary><span><b>Python using AI Workshop</b><small>AI for Techies · Aug 2025</small></span></summary><img loading="lazy" src="assets/image-08.jpg" alt="Certificate: Python using AI Workshop, AI for Techies · Aug 2025" decoding="async"></details>
+
+  </div>
+</section>
+
+<section id="achievements"><p class="sec-t">Achievements</p><h2>Achievements and interests</h2>
+  <div class="card ach rv"><img loading="lazy" src="assets/image-09.jpg" width="480" height="600" alt="G. Rohith Reddy speaking at a podium on stage at Marwadi University" decoding="async"><div><h3>Hosted an Expert Show</h3><p>Hosted an Expert Show attended by 1,500 students, which built my communication and presentation skills.</p></div></div>
+  <p class="int"><b>Interests:</b> music and old-school gym training.</p>
+</section>
+
+<section id="contact"><p class="sec-t">Contact</p><h2>Get in touch</h2>
+  <div class="card ct rv">
+    <p>I’m open to internship and entry-level data engineering opportunities. The best way to reach me is by email.</p>
+    <a class="mail" href="mailto:gundarohithreddy@gmail.com">gundarohithreddy@gmail.com</a>
+    <div class="btns">
+      <a class="btn pri" href="https://www.linkedin.com/in/gunda-rohith-reddy-234a17359/" target="_blank" rel="noopener">LinkedIn</a>
+      <a class="btn" href="https://github.com/RohithReddy17G" target="_blank" rel="noopener">GitHub</a>
+      <a class="btn" href="https://linktr.ee/RohithReddyG" target="_blank" rel="noopener">Linktree</a>
+      <a class="btn amb" href="assets/G_Rohith_Reddy_Resume.pdf" download="G_Rohith_Reddy_Resume.pdf">Download Resume</a>
+    </div>
+  </div>
+</section>
+</main>
+
+<nav id="dock" aria-label="Quick contact links">
+  <a href="https://www.linkedin.com/in/gunda-rohith-reddy-234a17359/" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433a2.062 2.062 0 01-2.063-2.065 2.064 2.064 0 112.063 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg><span>LinkedIn</span></a>
+  <a href="https://github.com/RohithReddy17G" target="_blank" rel="noopener"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M12 .297c-6.63 0-12 5.373-12 12 0 5.303 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61C4.422 18.07 3.633 17.7 3.633 17.7c-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 22.092 24 17.592 24 12.297c0-6.627-5.373-12-12-12"/></svg><span>GitHub</span></a>
+  <a href="mailto:gundarohithreddy@gmail.com"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M2 5.5A1.5 1.5 0 013.5 4h17A1.5 1.5 0 0122 5.5v13a1.5 1.5 0 01-1.5 1.5h-17A1.5 1.5 0 012 18.5v-13zm2.2.5L12 12l7.8-6H4.2z"/></svg><span>Email</span></a>
+</nav>
+<footer>© 2026 G. Rohith Reddy · Metro · Aspiring Data Engineer</footer>
+
+<script>
+(function(){
+const R=document.documentElement,$=s=>document.querySelector(s),$$=s=>[...document.querySelectorAll(s)];
+const reduce=matchMedia('(prefers-reduced-motion: reduce)').matches,fine=matchMedia('(hover:hover) and (pointer:fine)').matches;
+R.classList.add('js');
+const menu=$('#menu'),nav=$('#nav');
+menu.addEventListener('click',()=>{const o=nav.classList.toggle('open');menu.setAttribute('aria-expanded',o)});
+nav.addEventListener('click',e=>{if(e.target.tagName==='A'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+addEventListener('keydown',e=>{if(e.key==='Escape'){nav.classList.remove('open');menu.setAttribute('aria-expanded','false')}});
+const pg=$('#pg'),dock=$('#dock');
+let tk=false;
+function onScroll(){const y=scrollY,h=R.scrollHeight-innerHeight;pg.style.transform='scaleX('+(h>0?y/h:0)+')';dock.classList.toggle('show',y>520)}
+addEventListener('scroll',()=>{if(!tk){tk=true;requestAnimationFrame(()=>{onScroll();tk=false})}},{passive:true});onScroll();
+const links=$$('.nav a'),secs=['home','about','projects','skills','education','certifications','contact'].map(id=>document.getElementById(id));
+const spy=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){links.forEach(a=>a.classList.toggle('on',a.getAttribute('href')==='#'+x.target.id))}}),{rootMargin:'-45% 0px -50% 0px'});
+secs.forEach(s=>s&&spy.observe(s));
+const rv=$$('.rv'),io=new IntersectionObserver(en=>en.forEach(x=>{if(x.isIntersecting){const t=x.target;t.classList.add('in');io.unobserve(t);setTimeout(()=>t.classList.remove('rv','in'),900)}}),{threshold:.12});
+rv.forEach(e=>io.observe(e));
+const ch=$('.chart');if(ch){new IntersectionObserver((en,o)=>en.forEach(x=>{if(x.isIntersecting){ch.classList.add('on');o.disconnect()}}),{threshold:.4}).observe(ch)}
+$$('.cd').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)$$('.cd').forEach(o=>{if(o!==d)o.open=false})}));
+const rot=$('#rot');
+if(rot&&!reduce){const w=['SQL builder','data pipeline learner','quick learner','public speaker'];let i=0,c=w[0].length,del=true;
+(function step(){const s=w[i];let d=del?45:85;
+ if(del){c--;if(c<=0){del=false;i=(i+1)%w.length;c=0;d=300}}
+ else{c++;if(c>=w[i].length){del=true;d=1600}}
+ rot.textContent=w[i].slice(0,Math.max(c,0));setTimeout(step,d)})();setTimeout(()=>{},0)}
+if(fine){
+const ring=document.createElement('div'),dot=document.createElement('div');ring.className='cur';dot.className='dot';ring.setAttribute('aria-hidden','true');dot.setAttribute('aria-hidden','true');document.body.append(ring,dot);
+let x=-100,y=-100,rx=-100,ry=-100;
+addEventListener('pointermove',e=>{x=e.clientX;y=e.clientY;ring.style.opacity=1;dot.style.opacity=1;dot.style.transform='translate('+x+'px,'+y+'px)';ring.classList.toggle('hov',!!e.target.closest('a,button,summary'))},{passive:true});
+document.addEventListener('mouseleave',()=>{ring.style.opacity=0;dot.style.opacity=0});
+(function loop(){rx+=(x-rx)*.18;ry+=(y-ry)*.18;ring.style.transform='translate('+rx+'px,'+ry+'px)';requestAnimationFrame(loop)})();
+}
+})();
+</script>
+</body>
+</html>
