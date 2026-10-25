@@ -165,6 +165,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
 .hero::before{animation:drift 16s ease-in-out infinite alternate;transform-origin:center} .hero figure{animation:float 7s ease-in-out infinite;will-change:transform}.hero figure::after{content:"";position:absolute;inset:-30% 45% -30% -45%;background:linear-gradient(90deg,transparent,rgba(255,255,255,.28),transparent);transform:translateX(-130%) rotate(18deg);animation:shine 8s ease-in-out infinite;pointer-events:none}.hero figure{position:relative}.card{transition:transform .25s ease,box-shadow .25s ease,border-color .25s ease}.card:hover{transform:translateY(-4px);border-color:#C7D2FE;box-shadow:0 18px 30px -24px rgba(55,48,163,.55)}.btn{position:relative;overflow:hidden;transition:transform .2s ease,background .2s ease,box-shadow .2s ease}.btn::after{content:"";position:absolute;inset:0;background:linear-gradient(110deg,transparent 35%,rgba(255,255,255,.32),transparent 65%);transform:translateX(-120%);transition:transform .55s ease}.btn:hover::after{transform:translateX(120%)}.btn.pri{box-shadow:0 9px 18px -12px var(--pri)}.proof-strip span{animation:pop .65s both}.proof-strip span:nth-child(2){animation-delay:.1s}.proof-strip span:nth-child(3){animation-delay:.2s}
 
 .approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.approach .card{position:relative;overflow:hidden}.approach .card::after{content:"";position:absolute;right:-28px;bottom:-35px;width:100px;height:100px;border:1px solid rgba(55,48,163,.12);border-radius:50%;transition:transform .5s ease}.approach .card:hover::after{transform:scale(1.7)}.approach-no{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--tint);color:var(--pri);font-weight:800;font-size:.78rem;margin-bottom:18px}.approach h3{font-size:1.12rem;margin-bottom:9px}.approach p{color:var(--mute);font-size:.94rem}.approach-note{margin-top:18px!important;color:var(--pri)!important;font-weight:800;font-size:.76rem!important;letter-spacing:.04em;text-transform:uppercase}@media(max-width:860px){.approach{grid-template-columns:1fr}}
+.tagline{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;color:var(--ink);margin:-4px 0 14px;letter-spacing:-.02em}.quick-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;color:var(--mute);font-size:.82rem}.quick-links span{font-weight:700;color:var(--ink)}.quick-links a{color:var(--pri);font-weight:800;border-bottom:1px solid rgba(55,48,163,.25);transition:color .2s,border-color .2s}.quick-links a:hover{color:var(--acc);border-color:var(--acc)}
 </style>
 </head>
 <body>
@@ -183,7 +184,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
   <div>
     <span class="eyebrow">G. Rohith Reddy / Data Engineering Portfolio</span>
     <h1>G. <span class="hl">Rohith</span> Reddy</h1>
-    <p class="role">Aspiring Data Engineer | CSE–AI Student</p>
+    <p class="role">Aspiring Data Engineer | CSE–AI Student</p><p class="tagline">Turning raw data into useful answers.</p>
     <p class="type" aria-label="SQL builder, data pipeline learner, quick learner, public speaker">I’m a <span id="rot">SQL builder</span><i class="caret" aria-hidden="true"></i></p>
     <p class="lead">I’m a B.Tech student at Marwadi University focused on the work behind trustworthy data: clear SQL, useful transformations, and pipelines that turn raw information into decisions. I’m building that foundation through hands-on projects, practical certifications, and consistent learning.</p>
     <div class="btns">
@@ -193,6 +194,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
       <a class="btn" href="https://www.linkedin.com/in/gunda-rohith-reddy-234a17359/" target="_blank" rel="noopener">Connect on LinkedIn</a>
     </div>
     <div class="proof-strip" aria-label="Portfolio highlights"><span><b>2</b> data projects</span><span><b>6</b> practical certificates</span><span><b>4</b> semesters tracked</span></div>
+    <div class="quick-links" aria-label="Quick links"><span>Find me:</span><a href="https://www.linkedin.com/in/gunda-rohith-reddy-234a17359/" target="_blank" rel="noopener">LinkedIn</a><a href="https://github.com/RohithReddy17G" target="_blank" rel="noopener">GitHub</a><a href="mailto:gundarohithreddy@gmail.com">Email</a></div>
   </div>
   <figure><img src="assets/image-01.jpg" width="720" height="960" alt="Portrait of G. Rohith Reddy smiling, wearing a checked shirt in front of a red phone booth" decoding="async"></figure>
 </div>
