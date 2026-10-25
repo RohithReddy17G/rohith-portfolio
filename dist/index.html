@@ -166,6 +166,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
 
 .approach{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}.approach .card{position:relative;overflow:hidden}.approach .card::after{content:"";position:absolute;right:-28px;bottom:-35px;width:100px;height:100px;border:1px solid rgba(55,48,163,.12);border-radius:50%;transition:transform .5s ease}.approach .card:hover::after{transform:scale(1.7)}.approach-no{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:10px;background:var(--tint);color:var(--pri);font-weight:800;font-size:.78rem;margin-bottom:18px}.approach h3{font-size:1.12rem;margin-bottom:9px}.approach p{color:var(--mute);font-size:.94rem}.approach-note{margin-top:18px!important;color:var(--pri)!important;font-weight:800;font-size:.76rem!important;letter-spacing:.04em;text-transform:uppercase}@media(max-width:860px){.approach{grid-template-columns:1fr}}
 .tagline{font-size:clamp(1.05rem,2.2vw,1.3rem);font-weight:800;color:var(--ink);margin:-4px 0 14px;letter-spacing:-.02em}.quick-links{display:flex;flex-wrap:wrap;align-items:center;gap:10px;margin-top:16px;color:var(--mute);font-size:.82rem}.quick-links span{font-weight:700;color:var(--ink)}.quick-links a{color:var(--pri);font-weight:800;border-bottom:1px solid rgba(55,48,163,.25);transition:color .2s,border-color .2s}.quick-links a:hover{color:var(--acc);border-color:var(--acc)}
+@keyframes riseIn{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:none}}@keyframes drawLine{from{transform:scaleX(0);transform-origin:left}to{transform:scaleX(1);transform-origin:left}}.hero>div:first-child>*{animation:riseIn .7s cubic-bezier(.2,.8,.2,1) both}.hero>div:first-child>*:nth-child(2){animation-delay:.08s}.hero>div:first-child>*:nth-child(3){animation-delay:.16s}.hero>div:first-child>*:nth-child(4){animation-delay:.24s}.hero>div:first-child>*:nth-child(5){animation-delay:.32s}.hero>div:first-child>*:nth-child(6){animation-delay:.4s}.hero>div:first-child>*:nth-child(7){animation-delay:.48s}h2::after{transform:scaleX(0);transform-origin:left;animation:drawLine .8s .18s cubic-bezier(.2,.8,.2,1) both}.nav a{position:relative;overflow:hidden}.nav a.on::after{content:"";position:absolute;left:12px;right:12px;bottom:4px;height:2px;border-radius:2px;background:linear-gradient(90deg,var(--pri),var(--acc),var(--amb));animation:drawLine .35s ease both}.hero figure{--rx:0deg;--ry:0deg}.hero figure img{position:relative;transform:perspective(1000px) rotateX(var(--rx)) rotateY(var(--ry)) scale(1.01);transition:transform .35s cubic-bezier(.2,.8,.2,1),filter .35s ease;will-change:transform}.hero figure:hover img{filter:saturate(1.08) contrast(1.02)}.approach-no{transition:transform .35s ease,box-shadow .35s ease}.approach .card:hover .approach-no{transform:rotate(-8deg) scale(1.08);box-shadow:5px 5px 0 rgba(245,158,11,.45)}@media(prefers-reduced-motion:reduce){.hero>div:first-child>*,h2::after,.nav a.on::after{animation:none}.hero figure img{transform:none;transition:none}.approach-no{transition:none}}
 </style>
 </head>
 <body>
@@ -182,7 +183,7 @@ h2::after{content:"";display:block;width:52px;height:4px;border-radius:4px;margi
 <main id="main" class="w">
 <div class="hero" id="home">
   <div>
-    <span class="eyebrow">G. Rohith Reddy / Data Engineering Portfolio</span>
+    <span class="eyebrow">SQL · ETL · DuckDB</span>
     <h1>G. <span class="hl">Rohith</span> Reddy</h1>
     <p class="role">Aspiring Data Engineer | CSE–AI Student</p><p class="tagline">Turning raw data into useful answers.</p>
     <p class="type" aria-label="SQL analysis builder, ETL pipeline learner, DuckDB practitioner, GitHub project builder">I’m a <span id="rot">SQL builder</span><i class="caret" aria-hidden="true"></i></p>
@@ -345,6 +346,10 @@ if(rot&&!reduce){const w=['SQL analysis builder','ETL pipeline learner','DuckDB 
  if(del){c--;if(c<=0){del=false;i=(i+1)%w.length;c=0;d=300}}
  else{c++;if(c>=w[i].length){del=true;d=1600}}
  rot.textContent=w[i].slice(0,Math.max(c,0));setTimeout(step,d)})();setTimeout(()=>{},0)}
+if(fine&&!reduce){
+const fig=document.querySelector('.hero figure');
+if(fig){fig.addEventListener('pointermove',e=>{const r=fig.getBoundingClientRect(),px=e.clientX/r.width-r.left/r.width,py=e.clientY/r.height-r.top/r.height;fig.style.setProperty('--rx',(-py*5).toFixed(2)+'deg');fig.style.setProperty('--ry',(px*5).toFixed(2)+'deg')},{passive:true});fig.addEventListener('pointerleave',()=>{fig.style.setProperty('--rx','0deg');fig.style.setProperty('--ry','0deg')})}
+}
 if(fine){
 const ring=document.createElement('div'),dot=document.createElement('div');ring.className='cur';dot.className='dot';ring.setAttribute('aria-hidden','true');dot.setAttribute('aria-hidden','true');document.body.append(ring,dot);
 let x=-100,y=-100,rx=-100,ry=-100;
